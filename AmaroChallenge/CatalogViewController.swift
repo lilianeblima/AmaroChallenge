@@ -23,7 +23,6 @@ class CatalogViewController: UIViewController {
             products = prod
             self.collectionView.reloadData()
         }
-        // Do any additional setup after loading the view.
     }
 }
 
@@ -40,7 +39,8 @@ extension CatalogViewController: UICollectionViewDelegate, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellCard", for: indexPath) as? CardCollectionViewCell {
-            cell.labelName.text = products[indexPath.row].name
+            cell.product = products[indexPath.row]
+            cell.fillCell()
             
             return cell
         }

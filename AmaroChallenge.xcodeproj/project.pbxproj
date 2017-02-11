@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B32004E289A3BE879479FFF /* Pods_AmaroChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9368DFEDBF0E550342F0B9D3 /* Pods_AmaroChallengeTests.framework */; };
 		112FDA7E1E4F5C6400E229CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112FDA7D1E4F5C6400E229CA /* AppDelegate.swift */; };
 		112FDA831E4F5C6400E229CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 112FDA811E4F5C6400E229CA /* Main.storyboard */; };
 		112FDA851E4F5C6400E229CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 112FDA841E4F5C6400E229CA /* Assets.xcassets */; };
@@ -19,6 +20,10 @@
 		112FDAB51E4F63DD00E229CA /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112FDAB41E4F63DD00E229CA /* Size.swift */; };
 		112FDAB81E4F65AB00E229CA /* products.json in Resources */ = {isa = PBXBuildFile; fileRef = 112FDAB71E4F65AB00E229CA /* products.json */; };
 		112FDAC01E4F705900E229CA /* GetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112FDABF1E4F705900E229CA /* GetData.swift */; };
+		39C73ACA4DB04C72F61BEA58 /* Pods_AmaroChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E017330E8C240A4E13DD798 /* Pods_AmaroChallenge.framework */; };
+		8AA75288B26CF8C984E1890D /* Pods_AmaroChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E932DAC19712B8BF2F3C05C /* Pods_AmaroChallengeUITests.framework */; };
+		AE9E36A0B75926389CD0FB29 /* Pods_AmaroChallenge_AmaroChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4FBE40CCCF31719A2499B7 /* Pods_AmaroChallenge_AmaroChallengeTests.framework */; };
+		D8331437527BBBFA7DDE0378 /* Pods_AmaroChallenge_AmaroChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6629B97A42A541302697AAB7 /* Pods_AmaroChallenge_AmaroChallengeUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +62,21 @@
 		112FDAB41E4F63DD00E229CA /* Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
 		112FDAB71E4F65AB00E229CA /* products.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = products.json; sourceTree = "<group>"; };
 		112FDABF1E4F705900E229CA /* GetData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetData.swift; sourceTree = "<group>"; };
+		1EE0218FD863180A7F528A01 /* Pods-AmaroChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmaroChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AmaroChallenge/Pods-AmaroChallenge.debug.xcconfig"; sourceTree = "<group>"; };
+		2E017330E8C240A4E13DD798 /* Pods_AmaroChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AmaroChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F074A239F01E8ECB6AB8C1D /* Pods-AmaroChallenge-AmaroChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmaroChallenge-AmaroChallengeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AmaroChallenge-AmaroChallengeTests/Pods-AmaroChallenge-AmaroChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		478F18E5D4923CEA40CF992A /* Pods-AmaroChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmaroChallengeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AmaroChallengeTests/Pods-AmaroChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6629B97A42A541302697AAB7 /* Pods_AmaroChallenge_AmaroChallengeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AmaroChallenge_AmaroChallengeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		73B9FEAE0E56F18E9E7244A7 /* Pods-AmaroChallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmaroChallengeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AmaroChallengeUITests/Pods-AmaroChallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		75FC1E19F4843293FFE7F072 /* Pods-AmaroChallengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmaroChallengeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AmaroChallengeUITests/Pods-AmaroChallengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7E932DAC19712B8BF2F3C05C /* Pods_AmaroChallengeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AmaroChallengeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9368DFEDBF0E550342F0B9D3 /* Pods_AmaroChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AmaroChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		966F99001D449A7E575E638B /* Pods-AmaroChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmaroChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-AmaroChallenge/Pods-AmaroChallenge.release.xcconfig"; sourceTree = "<group>"; };
+		A419145A44E19F40BB871558 /* Pods-AmaroChallenge-AmaroChallengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmaroChallenge-AmaroChallengeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AmaroChallenge-AmaroChallengeUITests/Pods-AmaroChallenge-AmaroChallengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A494A2411387E53D8BD02BE4 /* Pods-AmaroChallenge-AmaroChallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmaroChallenge-AmaroChallengeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AmaroChallenge-AmaroChallengeUITests/Pods-AmaroChallenge-AmaroChallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		BE4FBE40CCCF31719A2499B7 /* Pods_AmaroChallenge_AmaroChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AmaroChallenge_AmaroChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D78EDBDCFAE10710371EE29E /* Pods-AmaroChallenge-AmaroChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmaroChallenge-AmaroChallengeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AmaroChallenge-AmaroChallengeTests/Pods-AmaroChallenge-AmaroChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
+		E539CF79E768286085AE96B5 /* Pods-AmaroChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmaroChallengeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AmaroChallengeTests/Pods-AmaroChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39C73ACA4DB04C72F61BEA58 /* Pods_AmaroChallenge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +92,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE9E36A0B75926389CD0FB29 /* Pods_AmaroChallenge_AmaroChallengeTests.framework in Frameworks */,
+				0B32004E289A3BE879479FFF /* Pods_AmaroChallengeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +101,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8331437527BBBFA7DDE0378 /* Pods_AmaroChallenge_AmaroChallengeUITests.framework in Frameworks */,
+				8AA75288B26CF8C984E1890D /* Pods_AmaroChallengeUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +116,8 @@
 				112FDA911E4F5C6400E229CA /* AmaroChallengeTests */,
 				112FDA9C1E4F5C6400E229CA /* AmaroChallengeUITests */,
 				112FDA7B1E4F5C6300E229CA /* Products */,
+				FD67AA2047DE3F0EF9815577 /* Pods */,
+				636241A17F9026D54A365FA4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -188,6 +215,35 @@
 			name = Worker;
 			sourceTree = "<group>";
 		};
+		636241A17F9026D54A365FA4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2E017330E8C240A4E13DD798 /* Pods_AmaroChallenge.framework */,
+				BE4FBE40CCCF31719A2499B7 /* Pods_AmaroChallenge_AmaroChallengeTests.framework */,
+				6629B97A42A541302697AAB7 /* Pods_AmaroChallenge_AmaroChallengeUITests.framework */,
+				9368DFEDBF0E550342F0B9D3 /* Pods_AmaroChallengeTests.framework */,
+				7E932DAC19712B8BF2F3C05C /* Pods_AmaroChallengeUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FD67AA2047DE3F0EF9815577 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1EE0218FD863180A7F528A01 /* Pods-AmaroChallenge.debug.xcconfig */,
+				966F99001D449A7E575E638B /* Pods-AmaroChallenge.release.xcconfig */,
+				3F074A239F01E8ECB6AB8C1D /* Pods-AmaroChallenge-AmaroChallengeTests.debug.xcconfig */,
+				D78EDBDCFAE10710371EE29E /* Pods-AmaroChallenge-AmaroChallengeTests.release.xcconfig */,
+				A419145A44E19F40BB871558 /* Pods-AmaroChallenge-AmaroChallengeUITests.debug.xcconfig */,
+				A494A2411387E53D8BD02BE4 /* Pods-AmaroChallenge-AmaroChallengeUITests.release.xcconfig */,
+				478F18E5D4923CEA40CF992A /* Pods-AmaroChallengeTests.debug.xcconfig */,
+				E539CF79E768286085AE96B5 /* Pods-AmaroChallengeTests.release.xcconfig */,
+				75FC1E19F4843293FFE7F072 /* Pods-AmaroChallengeUITests.debug.xcconfig */,
+				73B9FEAE0E56F18E9E7244A7 /* Pods-AmaroChallengeUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -195,9 +251,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 112FDAA21E4F5C6400E229CA /* Build configuration list for PBXNativeTarget "AmaroChallenge" */;
 			buildPhases = (
+				359640EC8D4150F2D3081489 /* [CP] Check Pods Manifest.lock */,
 				112FDA761E4F5C6300E229CA /* Sources */,
 				112FDA771E4F5C6300E229CA /* Frameworks */,
 				112FDA781E4F5C6300E229CA /* Resources */,
+				1D01AD8015F1ECE537A647DC /* [CP] Embed Pods Frameworks */,
+				C5B012C0E19CADFE0E04598F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -212,9 +271,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 112FDAA51E4F5C6400E229CA /* Build configuration list for PBXNativeTarget "AmaroChallengeTests" */;
 			buildPhases = (
+				D4302A408E64DF2B2C8EA4B5 /* [CP] Check Pods Manifest.lock */,
 				112FDA8A1E4F5C6400E229CA /* Sources */,
 				112FDA8B1E4F5C6400E229CA /* Frameworks */,
 				112FDA8C1E4F5C6400E229CA /* Resources */,
+				F67CB6B7AB4652EA039EC52B /* [CP] Embed Pods Frameworks */,
+				53BF64CF2D72A5207C7811F8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -230,9 +292,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 112FDAA81E4F5C6400E229CA /* Build configuration list for PBXNativeTarget "AmaroChallengeUITests" */;
 			buildPhases = (
+				7913E29C63E30DC4E561D715 /* [CP] Check Pods Manifest.lock */,
 				112FDA951E4F5C6400E229CA /* Sources */,
 				112FDA961E4F5C6400E229CA /* Frameworks */,
 				112FDA971E4F5C6400E229CA /* Resources */,
+				A583B3B8BFF741833C20290A /* [CP] Embed Pods Frameworks */,
+				7778BCEB52362465534908B5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -320,6 +385,144 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1D01AD8015F1ECE537A647DC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AmaroChallenge/Pods-AmaroChallenge-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		359640EC8D4150F2D3081489 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		53BF64CF2D72A5207C7811F8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AmaroChallengeTests/Pods-AmaroChallengeTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7778BCEB52362465534908B5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AmaroChallengeUITests/Pods-AmaroChallengeUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7913E29C63E30DC4E561D715 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A583B3B8BFF741833C20290A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AmaroChallengeUITests/Pods-AmaroChallengeUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C5B012C0E19CADFE0E04598F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AmaroChallenge/Pods-AmaroChallenge-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D4302A408E64DF2B2C8EA4B5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F67CB6B7AB4652EA039EC52B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AmaroChallengeTests/Pods-AmaroChallengeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		112FDA761E4F5C6300E229CA /* Sources */ = {
@@ -481,6 +684,7 @@
 		};
 		112FDAA31E4F5C6400E229CA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1EE0218FD863180A7F528A01 /* Pods-AmaroChallenge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4RLR8FUC4X;
@@ -494,6 +698,7 @@
 		};
 		112FDAA41E4F5C6400E229CA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 966F99001D449A7E575E638B /* Pods-AmaroChallenge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4RLR8FUC4X;
@@ -507,6 +712,7 @@
 		};
 		112FDAA61E4F5C6400E229CA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 478F18E5D4923CEA40CF992A /* Pods-AmaroChallengeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -522,6 +728,7 @@
 		};
 		112FDAA71E4F5C6400E229CA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E539CF79E768286085AE96B5 /* Pods-AmaroChallengeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -537,6 +744,7 @@
 		};
 		112FDAA91E4F5C6400E229CA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75FC1E19F4843293FFE7F072 /* Pods-AmaroChallengeUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 4RLR8FUC4X;
@@ -551,6 +759,7 @@
 		};
 		112FDAAA1E4F5C6400E229CA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73B9FEAE0E56F18E9E7244A7 /* Pods-AmaroChallengeUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 4RLR8FUC4X;

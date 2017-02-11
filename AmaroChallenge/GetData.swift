@@ -47,13 +47,15 @@ class GetData {
                 }
                 
                 if let sizesJson = productJson["sizes"] as? [AnyObject] {
+                    var sizes = [Size]()
                     for sizeJson in sizesJson {
                         var size = Size()
                         size.available  = sizeJson["available"]  as? Bool    ?? nil
                         size.size       = sizeJson["size"]       as? String  ?? ""
                         size.sku        = sizeJson["sku"]        as? String  ?? ""
-                        product.sizes?.append(size)
+                        sizes.append(size)
                     }
+                    product.sizes = sizes
                 }
                 
                 products.append(product)

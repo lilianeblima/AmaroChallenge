@@ -39,32 +39,40 @@
                                             <rect key="frame" x="0.0" y="0.0" width="294" height="480"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MHU-OO-7BS">
-                                                    <rect key="frame" x="28" y="18" width="238" height="348"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MHU-OO-7BS">
+                                                    <rect key="frame" x="28" y="18" width="238" height="351"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="labelName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TEn-q2-e4B">
-                                                    <rect key="frame" x="106" y="383" width="82" height="21"/>
+                                                    <rect key="frame" x="106" y="386" width="82" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="labelNormalPrice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgJ-jg-Jzg">
-                                                    <rect key="frame" x="38" y="415" width="131" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="labelNormalPrice" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgJ-jg-Jzg">
+                                                    <rect key="frame" x="38" y="418" width="104" height="18"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="labelFinalPrice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYH-qP-9f2">
-                                                    <rect key="frame" x="80" y="436" width="111" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <rect key="frame" x="82" y="436" width="109" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wfv-Aa-1vQ">
+                                                    <rect key="frame" x="199" y="407" width="67" height="73"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="73" id="95W-a4-yzl"/>
+                                                    </constraints>
+                                                </stackView>
                                             </subviews>
                                         </view>
-                                        <color key="backgroundColor" red="0.40603741496598639" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="wfv-Aa-1vQ" secondAttribute="bottom" id="Azu-Ld-K1N"/>
+                                            <constraint firstItem="wfv-Aa-1vQ" firstAttribute="leading" secondItem="FYH-qP-9f2" secondAttribute="trailing" constant="8" id="EnN-l0-CS0"/>
                                             <constraint firstItem="hgJ-jg-Jzg" firstAttribute="leading" secondItem="Zzy-gG-zkh" secondAttribute="leadingMargin" constant="30" id="IzM-Ch-5eB"/>
+                                            <constraint firstItem="wfv-Aa-1vQ" firstAttribute="trailing" secondItem="MHU-OO-7BS" secondAttribute="trailing" id="KfI-lH-3pi"/>
                                             <constraint firstItem="TEn-q2-e4B" firstAttribute="centerX" secondItem="Zzy-gG-zkh" secondAttribute="centerX" id="LKT-s3-fS3"/>
                                             <constraint firstItem="MHU-OO-7BS" firstAttribute="top" secondItem="Zzy-gG-zkh" secondAttribute="topMargin" constant="10" id="Vda-Xm-9oQ"/>
                                             <constraint firstItem="TEn-q2-e4B" firstAttribute="top" secondItem="MHU-OO-7BS" secondAttribute="bottom" constant="17" id="bJl-WN-NiO"/>
@@ -80,6 +88,7 @@
                                             <outlet property="labelFinalPrice" destination="FYH-qP-9f2" id="b89-tj-vhT"/>
                                             <outlet property="labelName" destination="TEn-q2-e4B" id="idb-YS-uji"/>
                                             <outlet property="labelNormalPrice" destination="hgJ-jg-Jzg" id="uUl-Vp-lMg"/>
+                                            <outlet property="sizeStackView" destination="wfv-Aa-1vQ" id="4XN-2J-b3j"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
