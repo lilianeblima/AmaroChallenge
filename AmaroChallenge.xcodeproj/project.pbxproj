@@ -8,12 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		112FDA7E1E4F5C6400E229CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112FDA7D1E4F5C6400E229CA /* AppDelegate.swift */; };
-		112FDA801E4F5C6400E229CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112FDA7F1E4F5C6400E229CA /* ViewController.swift */; };
 		112FDA831E4F5C6400E229CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 112FDA811E4F5C6400E229CA /* Main.storyboard */; };
 		112FDA851E4F5C6400E229CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 112FDA841E4F5C6400E229CA /* Assets.xcassets */; };
 		112FDA881E4F5C6400E229CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 112FDA861E4F5C6400E229CA /* LaunchScreen.storyboard */; };
 		112FDA931E4F5C6400E229CA /* AmaroChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112FDA921E4F5C6400E229CA /* AmaroChallengeTests.swift */; };
 		112FDA9E1E4F5C6400E229CA /* AmaroChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112FDA9D1E4F5C6400E229CA /* AmaroChallengeUITests.swift */; };
+		112FDAAE1E4F5F9D00E229CA /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112FDAAD1E4F5F9D00E229CA /* CatalogViewController.swift */; };
+		112FDAB01E4F5FF900E229CA /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112FDAAF1E4F5FF900E229CA /* CardCollectionViewCell.swift */; };
+		112FDAB31E4F633000E229CA /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112FDAB21E4F633000E229CA /* Product.swift */; };
+		112FDAB51E4F63DD00E229CA /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112FDAB41E4F63DD00E229CA /* Size.swift */; };
+		112FDAB81E4F65AB00E229CA /* products.json in Resources */ = {isa = PBXBuildFile; fileRef = 112FDAB71E4F65AB00E229CA /* products.json */; };
+		112FDAC01E4F705900E229CA /* GetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112FDABF1E4F705900E229CA /* GetData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +41,6 @@
 /* Begin PBXFileReference section */
 		112FDA7A1E4F5C6300E229CA /* AmaroChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmaroChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		112FDA7D1E4F5C6400E229CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		112FDA7F1E4F5C6400E229CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		112FDA821E4F5C6400E229CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		112FDA841E4F5C6400E229CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		112FDA871E4F5C6400E229CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +51,12 @@
 		112FDA991E4F5C6400E229CA /* AmaroChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AmaroChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		112FDA9D1E4F5C6400E229CA /* AmaroChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmaroChallengeUITests.swift; sourceTree = "<group>"; };
 		112FDA9F1E4F5C6400E229CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		112FDAAD1E4F5F9D00E229CA /* CatalogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
+		112FDAAF1E4F5FF900E229CA /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
+		112FDAB21E4F633000E229CA /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		112FDAB41E4F63DD00E229CA /* Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
+		112FDAB71E4F65AB00E229CA /* products.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = products.json; sourceTree = "<group>"; };
+		112FDABF1E4F705900E229CA /* GetData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +107,12 @@
 		112FDA7C1E4F5C6300E229CA /* AmaroChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				112FDA7D1E4F5C6400E229CA /* AppDelegate.swift */,
-				112FDA7F1E4F5C6400E229CA /* ViewController.swift */,
-				112FDA811E4F5C6400E229CA /* Main.storyboard */,
-				112FDA841E4F5C6400E229CA /* Assets.xcassets */,
-				112FDA861E4F5C6400E229CA /* LaunchScreen.storyboard */,
-				112FDA891E4F5C6400E229CA /* Info.plist */,
+				112FDABA1E4F684A00E229CA /* Worker */,
+				112FDAB91E4F65CF00E229CA /* Storyboards */,
+				112FDAB61E4F654F00E229CA /* Supporting Files */,
+				112FDAB11E4F62CA00E229CA /* Models */,
+				112FDAAC1E4F5F7F00E229CA /* Cells */,
+				112FDAAB1E4F5F7000E229CA /* ViewControllers */,
 			);
 			path = AmaroChallenge;
 			sourceTree = "<group>";
@@ -123,6 +133,59 @@
 				112FDA9F1E4F5C6400E229CA /* Info.plist */,
 			);
 			path = AmaroChallengeUITests;
+			sourceTree = "<group>";
+		};
+		112FDAAB1E4F5F7000E229CA /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				112FDAAD1E4F5F9D00E229CA /* CatalogViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		112FDAAC1E4F5F7F00E229CA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				112FDAAF1E4F5FF900E229CA /* CardCollectionViewCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		112FDAB11E4F62CA00E229CA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				112FDAB21E4F633000E229CA /* Product.swift */,
+				112FDAB41E4F63DD00E229CA /* Size.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		112FDAB61E4F654F00E229CA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				112FDA861E4F5C6400E229CA /* LaunchScreen.storyboard */,
+				112FDA841E4F5C6400E229CA /* Assets.xcassets */,
+				112FDAB71E4F65AB00E229CA /* products.json */,
+				112FDA7D1E4F5C6400E229CA /* AppDelegate.swift */,
+				112FDA891E4F5C6400E229CA /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		112FDAB91E4F65CF00E229CA /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				112FDA811E4F5C6400E229CA /* Main.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		112FDABA1E4F684A00E229CA /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				112FDABF1E4F705900E229CA /* GetData.swift */,
+			);
+			name = Worker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				112FDA881E4F5C6400E229CA /* LaunchScreen.storyboard in Resources */,
+				112FDAB81E4F65AB00E229CA /* products.json in Resources */,
 				112FDA851E4F5C6400E229CA /* Assets.xcassets in Resources */,
 				112FDA831E4F5C6400E229CA /* Main.storyboard in Resources */,
 			);
@@ -262,8 +326,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				112FDA801E4F5C6400E229CA /* ViewController.swift in Sources */,
+				112FDAB01E4F5FF900E229CA /* CardCollectionViewCell.swift in Sources */,
+				112FDAB51E4F63DD00E229CA /* Size.swift in Sources */,
+				112FDAB31E4F633000E229CA /* Product.swift in Sources */,
+				112FDAAE1E4F5F9D00E229CA /* CatalogViewController.swift in Sources */,
 				112FDA7E1E4F5C6400E229CA /* AppDelegate.swift in Sources */,
+				112FDAC01E4F705900E229CA /* GetData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

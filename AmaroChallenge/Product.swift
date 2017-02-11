@@ -13,8 +13,8 @@ struct Product {
     var name:   String?  = nil
     var style:  String?  = nil
     
-    var code_color: String?  = nil
-    var color_slug: String?  = nil
+    var codeColor: String?  = nil
+    var colorSlug: String?  = nil
     var color:      String?  = nil
 
     var onSale:             Bool?   = nil
@@ -23,7 +23,7 @@ struct Product {
     var discountPercentage: String? = nil
     var installments:       String? = nil
     
-    var image:  UIImage? = nil
+    var image:  URL? = nil
     var sizes:  [Size]?  = nil
     
 
