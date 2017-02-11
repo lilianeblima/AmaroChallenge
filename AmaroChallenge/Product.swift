@@ -23,8 +23,9 @@ struct Product {
     var discountPercentage: String? = nil
     var installments:       String? = nil
     
-    var image:  URL? = nil
-    var sizes:  [Size]?  = nil
+    var image:          URL?     = nil
+    var sizes:          [Size]?  = nil
+    var sizeSelect:     String?  = nil
     
 
 }
