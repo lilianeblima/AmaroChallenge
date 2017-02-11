@@ -24,6 +24,24 @@ class CatalogViewController: UIViewController {
             self.collectionView.reloadData()
         }
     }
+    
+    func alert(title:String, message:String, sizes:[Size]) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        for size in sizes {
+            if size.available == true {
+                let action = UIAlertAction(title: size.size, style: .default, handler: { (actionAlert) in
+                    print(size.size ?? "erro")
+                })
+                alertController.addAction(action)
+            }
+            
+        }
+        self.present(alertController, animated: true)
+    }
+    
+    func buttonBuy(button: UIButton) {
+        self.alert(title: "Selecione o tamanho", message: "", sizes: products[button.tag].sizes!)
+    }
 }
 
 
@@ -41,6 +59,8 @@ extension CatalogViewController: UICollectionViewDelegate, UICollectionViewDataS
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellCard", for: indexPath) as? CardCollectionViewCell {
             cell.product = products[indexPath.row]
             cell.fillCell()
+            cell.buttonAddToBuy.tag = indexPath.row
+            cell.buttonAddToBuy.addTarget(self, action: #selector(CatalogViewController.buttonBuy(button:)), for: .touchDown)
             
             return cell
         }

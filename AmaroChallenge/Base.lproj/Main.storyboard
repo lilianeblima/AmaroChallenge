@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Catalog View Controller-->
+        <!--Produtos-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="CatalogViewController" customModule="AmaroChallenge" customModuleProvider="target" sceneMemberID="viewController">
@@ -66,9 +66,15 @@
                                                         <constraint firstAttribute="height" constant="73" id="95W-a4-yzl"/>
                                                     </constraints>
                                                 </stackView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tiQ-rG-an9">
+                                                    <rect key="frame" x="-6" y="18" width="30" height="30"/>
+                                                    <state key="normal" title="B"/>
+                                                </button>
                                             </subviews>
                                         </view>
                                         <constraints>
+                                            <constraint firstItem="tiQ-rG-an9" firstAttribute="top" secondItem="MHU-OO-7BS" secondAttribute="top" id="8kY-MJ-b8l"/>
+                                            <constraint firstItem="tiQ-rG-an9" firstAttribute="leading" secondItem="Zzy-gG-zkh" secondAttribute="leadingMargin" constant="-14" id="AOr-yB-sWt"/>
                                             <constraint firstAttribute="bottom" secondItem="wfv-Aa-1vQ" secondAttribute="bottom" id="Azu-Ld-K1N"/>
                                             <constraint firstItem="wfv-Aa-1vQ" firstAttribute="leading" secondItem="FYH-qP-9f2" secondAttribute="trailing" constant="8" id="EnN-l0-CS0"/>
                                             <constraint firstItem="hgJ-jg-Jzg" firstAttribute="leading" secondItem="Zzy-gG-zkh" secondAttribute="leadingMargin" constant="30" id="IzM-Ch-5eB"/>
@@ -84,6 +90,7 @@
                                             <constraint firstAttribute="trailingMargin" secondItem="MHU-OO-7BS" secondAttribute="trailing" constant="20" id="u6R-0T-yap"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="buttonAddToBuy" destination="tiQ-rG-an9" id="hit-fH-O3L"/>
                                             <outlet property="image" destination="MHU-OO-7BS" id="796-4t-Hnr"/>
                                             <outlet property="labelFinalPrice" destination="FYH-qP-9f2" id="b89-tj-vhT"/>
                                             <outlet property="labelName" destination="TEn-q2-e4B" id="idb-YS-uji"/>
@@ -106,7 +113,10 @@
                             <constraint firstItem="fZq-bp-TTw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="vXw-oH-ims"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="tYC-Aa-c4o"/>
+                    <navigationItem key="navigationItem" title="Produtos" id="tYC-Aa-c4o">
+                        <barButtonItem key="leftBarButtonItem" title="Filtro" id="u43-Tt-W3T"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="sFd-sT-Ft7"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="fZq-bp-TTw" id="WnG-L0-X4x"/>
                     </connections>

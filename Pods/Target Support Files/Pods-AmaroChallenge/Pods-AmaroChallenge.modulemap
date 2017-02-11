@@ -1,0 +1,6 @@
+framework module Pods_AmaroChallenge {
+  umbrella header "Pods-AmaroChallenge-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -17,10 +17,14 @@ class CardCollectionViewCell: UICollectionViewCell {
     @IBOutlet var labelNormalPrice: UILabel!
     @IBOutlet var labelFinalPrice: UILabel!
     @IBOutlet var sizeStackView: UIStackView!
-    
+    @IBOutlet var buttonAddToBuy: UIButton!
     
     // MARK: - Variables
     var product: Product?
+    
+    
+    
+    
     
     func fillCell() {
         if let prod = product {
