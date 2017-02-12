@@ -27,7 +27,17 @@ struct Product {
     var sizes:          [Size]?  = nil
     var sizeSelect:     String?  = nil
     
+    var amount:         Int?     = 1
+    var finalPrice:     Double?  = 0
+    var currentPrice:   Double?  = 0
+    
 
+    mutating func convertPrice() {
+        var convert = actualPrice!.replacingOccurrences(of: "R$ ", with: "")
+        convert = convert.replacingOccurrences(of: ",", with: ".")
+        finalPrice = Double(convert)
+        currentPrice = Double(convert)
+    }
 }
 
 

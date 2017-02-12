@@ -141,7 +141,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="171" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gyT-kv-Mn5">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="171" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gyT-kv-Mn5">
                                 <rect key="frame" x="0.0" y="64" width="320" height="424"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -180,21 +180,23 @@
                                                     <rect key="frame" x="256" y="132" width="46" height="30"/>
                                                     <state key="normal" title="Button"/>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SNq-01-qgu">
-                                                    <rect key="frame" x="139" y="96" width="42" height="26"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ywz-Zv-8cP">
+                                                    <rect key="frame" x="139" y="105" width="99" height="30"/>
+                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <state key="normal" title="buttonAmount">
+                                                        <color key="titleColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="m9e-cj-swz" secondAttribute="trailing" constant="10" id="DLU-CX-UCf"/>
                                                 <constraint firstItem="FWc-rw-Rp7" firstAttribute="leading" secondItem="EhB-T9-NN5" secondAttribute="trailing" constant="20" id="F0r-T1-rfL"/>
                                                 <constraint firstItem="m9e-cj-swz" firstAttribute="bottom" secondItem="w7F-m1-wgK" secondAttribute="bottomMargin" id="W7A-oh-qYA"/>
-                                                <constraint firstItem="SNq-01-qgu" firstAttribute="leading" secondItem="HLQ-jd-v7C" secondAttribute="leading" id="XZm-Pl-9vA"/>
                                                 <constraint firstItem="HLQ-jd-v7C" firstAttribute="leading" secondItem="L7M-Ve-AYn" secondAttribute="leading" id="dOC-aZ-Vfo"/>
                                                 <constraint firstItem="HLQ-jd-v7C" firstAttribute="top" secondItem="L7M-Ve-AYn" secondAttribute="bottom" constant="6" id="ea1-tG-sDI"/>
-                                                <constraint firstItem="SNq-01-qgu" firstAttribute="top" secondItem="HLQ-jd-v7C" secondAttribute="bottom" constant="8" id="ghx-U2-6Ps"/>
+                                                <constraint firstItem="Ywz-Zv-8cP" firstAttribute="top" secondItem="HLQ-jd-v7C" secondAttribute="bottom" constant="17" id="fXI-cs-Wfh"/>
+                                                <constraint firstItem="Ywz-Zv-8cP" firstAttribute="leading" secondItem="HLQ-jd-v7C" secondAttribute="leading" id="hUS-v0-9p2"/>
                                                 <constraint firstItem="FWc-rw-Rp7" firstAttribute="top" secondItem="w7F-m1-wgK" secondAttribute="topMargin" id="nKv-hP-Dne"/>
                                                 <constraint firstItem="L7M-Ve-AYn" firstAttribute="top" secondItem="FWc-rw-Rp7" secondAttribute="bottom" constant="11" id="saa-72-fUU"/>
                                                 <constraint firstItem="EhB-T9-NN5" firstAttribute="top" secondItem="w7F-m1-wgK" secondAttribute="topMargin" id="tTk-Az-3ya"/>
@@ -204,9 +206,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="buttonAmount" destination="Ywz-Zv-8cP" id="oIG-I1-482"/>
                                             <outlet property="buttonRemoveList" destination="m9e-cj-swz" id="iNB-Yf-qa2"/>
                                             <outlet property="imageProduct" destination="EhB-T9-NN5" id="BFD-ua-1h4"/>
-                                            <outlet property="labelAmount" destination="SNq-01-qgu" id="c5q-pH-X5C"/>
                                             <outlet property="labelName" destination="FWc-rw-Rp7" id="NGw-pX-r3r"/>
                                             <outlet property="labelPrice" destination="L7M-Ve-AYn" id="LhG-qh-B2a"/>
                                             <outlet property="labelSize" destination="HLQ-jd-v7C" id="kIn-fe-wJj"/>

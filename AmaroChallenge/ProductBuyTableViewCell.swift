@@ -15,16 +15,17 @@ class ProductBuyTableViewCell: UITableViewCell {
     @IBOutlet var labelName: UILabel!
     @IBOutlet var labelPrice: UILabel!
     @IBOutlet var labelSize: UILabel!
-    @IBOutlet var labelAmount: UILabel!
     @IBOutlet var buttonRemoveList: UIButton!
+    @IBOutlet var buttonAmount: UIButton!
     
     var product: Product?
     
     func fillList() {
         if let prod = product {
             labelName.text  = prod.name
-            labelPrice.text = prod.actualPrice
+            labelPrice.text = "R$ " + (prod.finalPrice?.description)!
             labelSize.text  = prod.sizeSelect
+            buttonAmount.setTitle("Quantidade: " + (prod.amount?.description)!, for: .normal)
             
             if let url = prod.image {
                 imageProduct.af_setImage(withURL: url)
