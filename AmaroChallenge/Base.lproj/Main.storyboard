@@ -114,7 +114,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Produtos" id="tYC-Aa-c4o">
-                        <barButtonItem key="leftBarButtonItem" title="Filtro" id="u43-Tt-W3T"/>
+                        <barButtonItem key="leftBarButtonItem" title="Filtro" id="u43-Tt-W3T">
+                            <connections>
+                                <action selector="buttonFilter:" destination="BYZ-38-t0r" id="GEh-Df-v0c"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" id="sFd-sT-Ft7">
                             <connections>
                                 <segue destination="wgh-2c-koz" kind="show" id="8ds-or-8Jd"/>

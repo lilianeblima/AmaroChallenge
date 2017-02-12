@@ -21,14 +21,10 @@ class CardCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Variables
     var product: Product?
-    
-    
-    
-    
-    
+
+    // MARK: - Functions
     func fillCell() {
         if let prod = product {
-            
             labelName.text = prod.name
             
             if prod.onSale == true {
@@ -41,16 +37,12 @@ class CardCollectionViewCell: UICollectionViewCell {
             
             if let url = prod.image {
                 image.af_setImage(withURL: url)
+            } else {
+                image.image = UIImage(named: "noPicture")
             }
             
             self.settingsSizes(prod: prod)
-            
-        
-            
-            //sizeStackView.addArrangedSubview(label)
-            
         }
-        
     }
     
     func settingsSizes(prod:Product) {
@@ -60,7 +52,6 @@ class CardCollectionViewCell: UICollectionViewCell {
                 label.text = size.size
                 sizeStackView.addArrangedSubview(label)
             }
-            
         }
     }
     

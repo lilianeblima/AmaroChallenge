@@ -12,6 +12,8 @@ class CatalogViewController: UIViewController {
 
     @IBOutlet var collectionView: UICollectionView!
     var products = [Product]()
+    var productsFilter = [Product]()
+    var filter = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +44,26 @@ class CatalogViewController: UIViewController {
     func buttonBuy(button: UIButton) {
         self.alert(title: "Selecione o tamanho", message: "", sizes: products[button.tag].sizes!)
     }
+    
+    @IBAction func buttonFilter(_ sender: UIBarButtonItem) {
+        if filter == false {
+            filter = true
+            productsFilter = products
+            var prods = [Product]()
+            
+            for prod in products {
+                if prod.onSale! {
+                    prods.append(prod)
+                }
+            }
+            products = prods
+        } else {
+            filter = false
+            products = productsFilter
+        }
+        self.collectionView.reloadData()
+    }
+    
 }
 
 
