@@ -17,18 +17,40 @@ class CatalogViewController: UIViewController {
     var products = [Product]()
     var productsFilter = [Product]()
     var filter = false
+    var badges = 0
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         GetData().getAllproducts { (mProducts) in
             guard let prod = mProducts else {
                 return
             }
             products = prod
             self.collectionView.reloadData()
+            self.settingsButtonBarRight(badge: 0)
         }
+    }
+
+    func settingsButtonBarRight(badge:Int) {
+        let buttonRight = UIButton(type: .custom)
+        buttonRight.frame = CGRect(x: 0, y: 0, width: 40 , height: 40)
+        buttonRight.setImage(UIImage(named: "car"), for: .normal)
+        
+        if badge != 0 {
+            let labelBadge = UILabel()
+            labelBadge.text = " " + badge.description
+            labelBadge.backgroundColor = UIColor.red
+            labelBadge.textColor = UIColor.white
+            labelBadge.layer.masksToBounds = true
+            labelBadge.layer.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
+            labelBadge.layer.cornerRadius = 10
+            buttonRight.addSubview(labelBadge)
+        }
+        
+        let barButtonItem = UIBarButtonItem(customView: buttonRight)
+        self.navigationItem.setRightBarButton(barButtonItem, animated: true)
     }
 
     // MARK: - Buttons
@@ -62,6 +84,8 @@ class CatalogViewController: UIViewController {
             if size.available == true {
                 let action = UIAlertAction(title: size.size, style: .default, handler: { (actionAlert) in
                     print(size.size ?? "erro")
+                    self.badges += 1
+                    self.settingsButtonBarRight(badge: self.badges)
                 })
                 alertController.addAction(action)
             }
@@ -69,7 +93,6 @@ class CatalogViewController: UIViewController {
         }
         self.present(alertController, animated: true)
     }
-    
 }
 
 
@@ -94,5 +117,4 @@ extension CatalogViewController: UICollectionViewDelegate, UICollectionViewDataS
         }
         return UICollectionViewCell()
     }
-    
 }

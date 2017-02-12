@@ -40,10 +40,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MHU-OO-7BS">
-                                                    <rect key="frame" x="28" y="18" width="238" height="351"/>
+                                                    <rect key="frame" x="28" y="18" width="238" height="332"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="labelName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TEn-q2-e4B">
-                                                    <rect key="frame" x="106" y="386" width="82" height="21"/>
+                                                    <rect key="frame" x="106" y="367" width="82" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -61,10 +61,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wfv-Aa-1vQ">
-                                                    <rect key="frame" x="199" y="407" width="67" height="73"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="73" id="95W-a4-yzl"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="199" y="390" width="67" height="90"/>
                                                 </stackView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tiQ-rG-an9">
                                                     <rect key="frame" x="-6" y="18" width="30" height="30"/>
@@ -84,9 +81,10 @@
                                             <constraint firstItem="TEn-q2-e4B" firstAttribute="top" secondItem="MHU-OO-7BS" secondAttribute="bottom" constant="17" id="bJl-WN-NiO"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="FYH-qP-9f2" secondAttribute="trailing" constant="95" id="gLC-19-szd"/>
                                             <constraint firstItem="MHU-OO-7BS" firstAttribute="leading" secondItem="Zzy-gG-zkh" secondAttribute="leadingMargin" constant="20" id="hwl-b0-bEV"/>
-                                            <constraint firstItem="hgJ-jg-Jzg" firstAttribute="top" secondItem="TEn-q2-e4B" secondAttribute="bottom" constant="11" id="kHA-1W-fyx"/>
+                                            <constraint firstItem="hgJ-jg-Jzg" firstAttribute="top" secondItem="TEn-q2-e4B" secondAttribute="bottom" constant="30" id="kHA-1W-fyx"/>
                                             <constraint firstItem="FYH-qP-9f2" firstAttribute="top" secondItem="hgJ-jg-Jzg" secondAttribute="bottom" id="kHJ-ll-uHQ"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="FYH-qP-9f2" secondAttribute="bottom" constant="15" id="r1d-6U-nLu"/>
+                                            <constraint firstItem="wfv-Aa-1vQ" firstAttribute="top" secondItem="TEn-q2-e4B" secondAttribute="bottom" constant="2" id="sAI-DO-Cvz"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="MHU-OO-7BS" secondAttribute="trailing" constant="20" id="u6R-0T-yap"/>
                                         </constraints>
                                         <connections>

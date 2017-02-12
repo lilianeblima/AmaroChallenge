@@ -46,6 +46,13 @@ class CardCollectionViewCell: UICollectionViewCell {
     }
     
     func settingsSizes(prod:Product) {
+        print(sizeStackView.arrangedSubviews.count)
+        if sizeStackView.arrangedSubviews.count != 0 {
+            for viewStack in sizeStackView.arrangedSubviews {
+                sizeStackView.removeArrangedSubview(viewStack)
+                viewStack.removeFromSuperview()
+            }
+        }
         for size in prod.sizes! {
             if size.available == true {
                 let label = UILabel()
