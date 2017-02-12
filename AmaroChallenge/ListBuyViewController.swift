@@ -11,12 +11,12 @@ import UIKit
 class ListBuyViewController: UIViewController {
 
     var products = [Product]()
+    var total    = 0.0
     
     @IBOutlet var labelAmountItem: UILabel!
     @IBOutlet var labelFinalPrice: UILabel!
-    
-    
     @IBOutlet var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         for _ in 0..<5 {
@@ -30,6 +30,16 @@ class ListBuyViewController: UIViewController {
         }
         labelAmountItem.text = products.count.description + " produtos no carrinho."
         tableView.reloadData()
+        calculeTotal()
+        
+    }
+    
+    func calculeTotal() {
+        total = 0.0
+        for product in products {
+            total = total + product.finalPrice!
+        }
+        labelFinalPrice.text = "R$ " + total.description
     }
 
     func selectAmount(index:Int) {
@@ -40,6 +50,7 @@ class ListBuyViewController: UIViewController {
                 self.products[index].amount = amount
                 self.products[index].finalPrice = Double(amount) * self.products[index].currentPrice!
                 let indexPath = IndexPath(row: index, section: 0)
+                self.calculeTotal()
                 self.tableView.reloadRows(at: [indexPath], with: .automatic)
             })
             action.addAction(ActionButton)
