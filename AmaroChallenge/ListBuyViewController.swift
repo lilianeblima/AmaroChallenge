@@ -28,9 +28,19 @@ class ListBuyViewController: UIViewController {
             prod.convertPrice()
             products.append(prod)
         }
-        labelAmountItem.text = products.count.description + " produtos no carrinho."
         tableView.reloadData()
-        calculeTotal()
+        self.calculeTotal()
+        self.calculeAmountItem()
+    }
+    
+    func calculeAmountItem() {
+        if products.count == 0 {
+            labelAmountItem.text = "Você não possuí produtos no carrinho"
+        } else if products.count == 1 {
+            labelAmountItem.text = "Você possui 1 produto no carrinho"
+        } else {
+            labelAmountItem.text = products.count.description + " produtos no carrinho"
+        }
         
     }
     
@@ -68,6 +78,13 @@ class ListBuyViewController: UIViewController {
         self.selectAmount(index: button.tag)
     }
     
+    func buttonRemove(button:UIButton) {
+        self.products.remove(at: button.tag)
+        self.tableView.reloadData()
+        self.calculeTotal()
+        self.calculeAmountItem()
+    }
+    
     
 }
 
@@ -83,6 +100,8 @@ extension ListBuyViewController: UITableViewDataSource, UITableViewDelegate {
             cell.fillList()
             cell.buttonAmount.tag = indexPath.row
             cell.buttonAmount.addTarget(self, action: #selector(ListBuyViewController.buttonSelectAmount(button:)), for: .touchDown)
+            cell.buttonRemoveList.tag = indexPath.row
+            cell.buttonRemoveList.addTarget(self, action: #selector(ListBuyViewController.buttonRemove(button:)), for: .touchDown)
             return cell
         }
         return UITableViewCell()
