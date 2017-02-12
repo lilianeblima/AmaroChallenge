@@ -18,6 +18,7 @@ class CardCollectionViewCell: UICollectionViewCell {
     @IBOutlet var labelFinalPrice: UILabel!
     @IBOutlet var sizeStackView: UIStackView!
     @IBOutlet var buttonAddToBuy: UIButton!
+    @IBOutlet var labelDiscount: UILabel!
     
     // MARK: - Variables
     var product: Product?
@@ -32,12 +33,19 @@ class CardCollectionViewCell: UICollectionViewCell {
     func fillCell() {
         if let prod = product {
             self.borderImage()
+            
             labelName.text = prod.name
             
             if prod.onSale == true {
                 labelNormalPrice.isHidden = false
                 labelNormalPrice.text = "De: " + prod.regularPrice!
+                
+                labelDiscount.isHidden = false
+                labelDiscount.layer.masksToBounds = true
+                labelDiscount.layer.cornerRadius = 35
+                labelDiscount.text = "-" + prod.discountPercentage!
             } else {
+                labelDiscount.isHidden = true
                 labelNormalPrice.isHidden = true
             }
             labelFinalPrice.text = "Por: " + prod.actualPrice!
