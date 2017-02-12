@@ -65,9 +65,9 @@ class ListBuyViewController: UIViewController {
         if products.count == 0 {
             labelAmountItem.text = "Você não possuí produtos no carrinho"
         } else if products.count == 1 {
-            labelAmountItem.text = "Você possui 1 produto no carrinho"
+            labelAmountItem.text = "Você possuí 1 produto no carrinho"
         } else {
-            labelAmountItem.text = products.count.description + " produtos no carrinho"
+            labelAmountItem.text = "Você possuí " + products.count.description + " produtos no carrinho"
         }
         
     }
