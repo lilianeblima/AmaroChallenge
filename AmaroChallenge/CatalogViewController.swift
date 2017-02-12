@@ -48,7 +48,7 @@ class CatalogViewController: UIViewController {
             labelBadge.layer.cornerRadius = 10
             buttonRight.addSubview(labelBadge)
         }
-        
+        buttonRight.addTarget(self, action: #selector(CatalogViewController.buttonListToBuy(button:)), for: .touchDown)
         let barButtonItem = UIBarButtonItem(customView: buttonRight)
         self.navigationItem.setRightBarButton(barButtonItem, animated: true)
     }
@@ -56,6 +56,11 @@ class CatalogViewController: UIViewController {
     // MARK: - Buttons
     func buttonBuy(button: UIButton) {
         self.alert(title: "Selecione o tamanho", message: "", sizes: products[button.tag].sizes!)
+    }
+    func buttonListToBuy(button: UIButton) {
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let listView = mainStoryboard.instantiateViewController(withIdentifier: "listView")
+        self.navigationController?.pushViewController(listView, animated: true)
     }
     
     @IBAction func buttonFilter(_ sender: UIBarButtonItem) {

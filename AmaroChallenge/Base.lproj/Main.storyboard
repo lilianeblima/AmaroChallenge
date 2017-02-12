@@ -134,7 +134,7 @@
         <!--List Buy View Controller-->
         <scene sceneID="mPf-cc-IQY">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="wgh-2c-koz" customClass="ListBuyViewController" customModule="AmaroChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="listView" automaticallyAdjustsScrollViewInsets="NO" id="wgh-2c-koz" customClass="ListBuyViewController" customModule="AmaroChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gdt-dm-bvm"/>
                         <viewControllerLayoutGuide type="bottom" id="7pa-5F-r7M"/>
