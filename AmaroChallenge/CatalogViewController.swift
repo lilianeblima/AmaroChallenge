@@ -29,8 +29,17 @@ class CatalogViewController: UIViewController {
             }
             products = prod
             self.collectionView.reloadData()
-            self.settingsButtonBarRight(badge: 0)
+           
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.updateBadge()
+    }
+    
+    func updateBadge() {
+        let prodsRealm = RealmController().getAllProducts()
+        self.settingsButtonBarRight(badge: prodsRealm.count)
     }
 
     func settingsButtonBarRight(badge:Int) {
@@ -44,8 +53,8 @@ class CatalogViewController: UIViewController {
             labelBadge.backgroundColor = UIColor.red
             labelBadge.textColor = UIColor.white
             labelBadge.layer.masksToBounds = true
-            labelBadge.layer.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
-            labelBadge.layer.cornerRadius = 10
+            labelBadge.layer.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
+            labelBadge.layer.cornerRadius = 12.5
             buttonRight.addSubview(labelBadge)
         }
         buttonRight.addTarget(self, action: #selector(CatalogViewController.buttonListToBuy(button:)), for: .touchDown)
@@ -55,7 +64,7 @@ class CatalogViewController: UIViewController {
 
     // MARK: - Buttons
     func buttonBuy(button: UIButton) {
-        self.alert(title: "Selecione o tamanho", message: "", sizes: products[button.tag].sizes!)
+        self.alertSize(title: "Selecione o tamanho", message: "", sizes: products[button.tag].sizes!, index: button.tag)
     }
     func buttonListToBuy(button: UIButton) {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -83,14 +92,16 @@ class CatalogViewController: UIViewController {
     }
     
     // MARK: - Alert Size
-    func alert(title:String, message:String, sizes:[Size]) {
+    func alertSize(title:String, message:String, sizes:[Size], index:Int) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         for size in sizes {
             if size.available == true {
                 let action = UIAlertAction(title: size.size, style: .default, handler: { (actionAlert) in
-                    print(size.size ?? "erro")
-                    self.badges += 1
-                    self.settingsButtonBarRight(badge: self.badges)
+                    let success = RealmController().saveRealm(product: self.products[index], sizeSelect: size.size!)
+                    if success == false {
+                        self.alert(title: "Desculpe", message: "Produto já adicionado ao carrinho, com o mesmo tamanho")
+                    }
+                    self.updateBadge()
                 })
                 alertController.addAction(action)
             }
@@ -98,6 +109,14 @@ class CatalogViewController: UIViewController {
         }
         self.present(alertController, animated: true)
     }
+    
+    func alert(title:String, message:String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alertController.addAction(action)
+        self.present(alertController, animated: true)
+    }
+    
 }
 
 

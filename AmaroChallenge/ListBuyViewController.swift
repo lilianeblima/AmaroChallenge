@@ -22,15 +22,8 @@ class ListBuyViewController: UIViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        for _ in 0..<5 {
-            var prod = Product()
-            prod.name = "Oi"
-            prod.actualPrice = "R$ 100,50"
-            prod.sizeSelect = "P"
-            prod.image = URL(string: "https://d2odcms9up7saa.cloudfront.net/appdata/images/products/20002575_027_catalog_1.jpg?1459537946")
-            prod.convertPrice()
-            products.append(prod)
-        }
+        
+        products = RealmController().getAllProducts()
         tableView.reloadData()
         self.calculeTotal()
         self.calculeAmountItem()
@@ -49,6 +42,7 @@ class ListBuyViewController: UIViewController {
                 let indexPath = IndexPath(row: index, section: 0)
                 self.calculeTotal()
                 self.tableView.reloadRows(at: [indexPath], with: .automatic)
+                RealmController().updateData(product: self.products[index])
             })
             action.addAction(ActionButton)
         }
@@ -59,6 +53,7 @@ class ListBuyViewController: UIViewController {
     }
     
     func buttonRemove(button:UIButton) {
+        RealmController().removeProduct(product: products[button.tag])
         self.products.remove(at: button.tag)
         self.tableView.reloadData()
         self.calculeTotal()

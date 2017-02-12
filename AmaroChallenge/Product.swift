@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import RealmSwift
 
-struct Product {
+class Product:Object {
     
+    var id:     String?  = nil
+
     var name:   String?  = nil
     var style:  String?  = nil
     
@@ -23,21 +26,23 @@ struct Product {
     var discountPercentage: String? = nil
     var installments:       String? = nil
     
-    var image:          URL?     = nil
-    var sizes:          [Size]?  = nil
-    var sizeSelect:     String?  = nil
+    var image:          String?     = nil
+    var sizes:          [Size]?     = nil
+    var sizeSelect:     String?     = nil
     
     var amount:         Int?     = 1
     var finalPrice:     Double?  = 0
     var currentPrice:   Double?  = 0
     
 
-    mutating func convertPrice() {
+    func convertPrice() {
         var convert = actualPrice!.replacingOccurrences(of: "R$ ", with: "")
         convert = convert.replacingOccurrences(of: ",", with: ".")
         finalPrice = Double(convert)
         currentPrice = Double(convert)
     }
+    
+
 }
 
 

@@ -35,7 +35,7 @@ class CardCollectionViewCell: UICollectionViewCell {
             }
             labelFinalPrice.text = prod.actualPrice
             
-            if let url = prod.image {
+            if let url =  URL(string: prod.image!) {
                 image.af_setImage(withURL: url)
             } else {
                 image.image = UIImage(named: "noPicture")
@@ -46,7 +46,6 @@ class CardCollectionViewCell: UICollectionViewCell {
     }
     
     func settingsSizes(prod:Product) {
-        print(sizeStackView.arrangedSubviews.count)
         if sizeStackView.arrangedSubviews.count != 0 {
             for viewStack in sizeStackView.arrangedSubviews {
                 sizeStackView.removeArrangedSubview(viewStack)

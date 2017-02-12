@@ -22,6 +22,8 @@
 		112FDAC01E4F705900E229CA /* GetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112FDABF1E4F705900E229CA /* GetData.swift */; };
 		112FDAC21E4F900B00E229CA /* ProductBuyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112FDAC11E4F900B00E229CA /* ProductBuyTableViewCell.swift */; };
 		112FDAC41E4F902100E229CA /* ListBuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112FDAC31E4F902100E229CA /* ListBuyViewController.swift */; };
+		117AF2931E50974C00400ACB /* RealmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117AF2921E50974C00400ACB /* RealmController.swift */; };
+		117AF2951E50A03200400ACB /* ProductRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117AF2941E50A03200400ACB /* ProductRealm.swift */; };
 		39C73ACA4DB04C72F61BEA58 /* Pods_AmaroChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E017330E8C240A4E13DD798 /* Pods_AmaroChallenge.framework */; };
 		8AA75288B26CF8C984E1890D /* Pods_AmaroChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E932DAC19712B8BF2F3C05C /* Pods_AmaroChallengeUITests.framework */; };
 		AE9E36A0B75926389CD0FB29 /* Pods_AmaroChallenge_AmaroChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4FBE40CCCF31719A2499B7 /* Pods_AmaroChallenge_AmaroChallengeTests.framework */; };
@@ -66,6 +68,8 @@
 		112FDABF1E4F705900E229CA /* GetData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetData.swift; sourceTree = "<group>"; };
 		112FDAC11E4F900B00E229CA /* ProductBuyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductBuyTableViewCell.swift; sourceTree = "<group>"; };
 		112FDAC31E4F902100E229CA /* ListBuyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListBuyViewController.swift; sourceTree = "<group>"; };
+		117AF2921E50974C00400ACB /* RealmController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmController.swift; sourceTree = "<group>"; };
+		117AF2941E50A03200400ACB /* ProductRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductRealm.swift; sourceTree = "<group>"; };
 		1EE0218FD863180A7F528A01 /* Pods-AmaroChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmaroChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AmaroChallenge/Pods-AmaroChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		2E017330E8C240A4E13DD798 /* Pods_AmaroChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AmaroChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F074A239F01E8ECB6AB8C1D /* Pods-AmaroChallenge-AmaroChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmaroChallenge-AmaroChallengeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AmaroChallenge-AmaroChallengeTests/Pods-AmaroChallenge-AmaroChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -189,6 +193,7 @@
 			children = (
 				112FDAB21E4F633000E229CA /* Product.swift */,
 				112FDAB41E4F63DD00E229CA /* Size.swift */,
+				117AF2941E50A03200400ACB /* ProductRealm.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -217,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				112FDABF1E4F705900E229CA /* GetData.swift */,
+				117AF2921E50974C00400ACB /* RealmController.swift */,
 			);
 			name = Worker;
 			sourceTree = "<group>";
@@ -541,8 +547,10 @@
 				112FDAB51E4F63DD00E229CA /* Size.swift in Sources */,
 				112FDAB31E4F633000E229CA /* Product.swift in Sources */,
 				112FDAAE1E4F5F9D00E229CA /* CatalogViewController.swift in Sources */,
+				117AF2931E50974C00400ACB /* RealmController.swift in Sources */,
 				112FDA7E1E4F5C6400E229CA /* AppDelegate.swift in Sources */,
 				112FDAC01E4F705900E229CA /* GetData.swift in Sources */,
+				117AF2951E50A03200400ACB /* ProductRealm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

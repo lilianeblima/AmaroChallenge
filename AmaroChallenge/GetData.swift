@@ -28,7 +28,7 @@ class GetData {
             
             var products = [Product]()
             for productJson in productsJson {
-                var product = Product()
+                let product = Product()
                 
                 product.name               = productJson["name"]                as? String  ?? ""
                 product.style              = productJson["style"]               as? String  ?? ""
@@ -40,11 +40,7 @@ class GetData {
                 product.actualPrice        = productJson["actual_price"]        as? String  ?? ""
                 product.discountPercentage = productJson["discount_percentage"] as? String  ?? ""
                 product.installments       = productJson["installments"]        as? String  ?? ""
-                
-                let imageURL = productJson["image"] as? String ?? ""
-                if let url = URL(string: imageURL) {
-                    product.image = url
-                }
+                product.image              = productJson["image"]               as? String  ?? ""
                 
                 if let sizesJson = productJson["sizes"] as? [AnyObject] {
                     var sizes = [Size]()
