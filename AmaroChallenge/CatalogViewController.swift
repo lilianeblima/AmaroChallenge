@@ -10,11 +10,15 @@ import UIKit
 
 class CatalogViewController: UIViewController {
 
+    // MARK: - Outlets
     @IBOutlet var collectionView: UICollectionView!
+    
+    // MARK: - Variables
     var products = [Product]()
     var productsFilter = [Product]()
     var filter = false
     
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,21 +30,8 @@ class CatalogViewController: UIViewController {
             self.collectionView.reloadData()
         }
     }
-    
-    func alert(title:String, message:String, sizes:[Size]) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        for size in sizes {
-            if size.available == true {
-                let action = UIAlertAction(title: size.size, style: .default, handler: { (actionAlert) in
-                    print(size.size ?? "erro")
-                })
-                alertController.addAction(action)
-            }
-            
-        }
-        self.present(alertController, animated: true)
-    }
-    
+
+    // MARK: - Buttons
     func buttonBuy(button: UIButton) {
         self.alert(title: "Selecione o tamanho", message: "", sizes: products[button.tag].sizes!)
     }
@@ -62,6 +53,21 @@ class CatalogViewController: UIViewController {
             products = productsFilter
         }
         self.collectionView.reloadData()
+    }
+    
+    // MARK: - Alert Size
+    func alert(title:String, message:String, sizes:[Size]) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        for size in sizes {
+            if size.available == true {
+                let action = UIAlertAction(title: size.size, style: .default, handler: { (actionAlert) in
+                    print(size.size ?? "erro")
+                })
+                alertController.addAction(action)
+            }
+            
+        }
+        self.present(alertController, animated: true)
     }
     
 }

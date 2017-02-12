@@ -11,6 +11,7 @@ import AlamofireImage
 
 class ProductBuyTableViewCell: UITableViewCell {
 
+    // MARK: - Outlets
     @IBOutlet var imageProduct: UIImageView!
     @IBOutlet var labelName: UILabel!
     @IBOutlet var labelPrice: UILabel!
@@ -18,8 +19,10 @@ class ProductBuyTableViewCell: UITableViewCell {
     @IBOutlet var buttonRemoveList: UIButton!
     @IBOutlet var buttonAmount: UIButton!
     
+    // MARK: - Variables
     var product: Product?
     
+    // MARK: - Function
     func fillList() {
         if let prod = product {
             labelName.text  = prod.name
@@ -29,13 +32,15 @@ class ProductBuyTableViewCell: UITableViewCell {
             
             if let url = prod.image {
                 imageProduct.af_setImage(withURL: url)
+            } else {
+                imageProduct.image = UIImage(named: "noPicture")
             }
         }
     }
     
+    // MARK: - TableView
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

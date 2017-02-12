@@ -10,13 +10,16 @@ import UIKit
 
 class ListBuyViewController: UIViewController {
 
-    var products = [Product]()
-    var total    = 0.0
-    
+    // MARK: - Outlets
     @IBOutlet var labelAmountItem: UILabel!
     @IBOutlet var labelFinalPrice: UILabel!
     @IBOutlet var tableView: UITableView!
     
+    // MARK: - Variables
+    var products = [Product]()
+    var total    = 0.0
+    
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         for _ in 0..<5 {
@@ -32,7 +35,37 @@ class ListBuyViewController: UIViewController {
         self.calculeTotal()
         self.calculeAmountItem()
     }
+
     
+    // MARK: - Buttons
+    func buttonSelectAmount(button:UIButton) {
+        let index = button.tag
+        let action = UIAlertController(title: "Selecione a quantidade", message: "", preferredStyle: .actionSheet)
+        
+        for amount in 1..<11 {
+            let ActionButton = UIAlertAction(title: amount.description, style: .default, handler: { (action) in
+                self.products[index].amount = amount
+                self.products[index].finalPrice = Double(amount) * self.products[index].currentPrice!
+                let indexPath = IndexPath(row: index, section: 0)
+                self.calculeTotal()
+                self.tableView.reloadRows(at: [indexPath], with: .automatic)
+            })
+            action.addAction(ActionButton)
+        }
+        let cancel = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
+        action.addAction(cancel)
+        
+        self.present(action, animated: true, completion: nil)
+    }
+    
+    func buttonRemove(button:UIButton) {
+        self.products.remove(at: button.tag)
+        self.tableView.reloadData()
+        self.calculeTotal()
+        self.calculeAmountItem()
+    }
+    
+    // MARK: - Functions Total
     func calculeAmountItem() {
         if products.count == 0 {
             labelAmountItem.text = "Você não possuí produtos no carrinho"
@@ -51,40 +84,6 @@ class ListBuyViewController: UIViewController {
         }
         labelFinalPrice.text = "R$ " + total.description
     }
-
-    func selectAmount(index:Int) {
-        let action = UIAlertController(title: "Selecione a quantidade", message: "", preferredStyle: .actionSheet)
-        
-        for amount in 1..<11 {
-            let ActionButton = UIAlertAction(title: amount.description, style: .default, handler: { (action) in
-                self.products[index].amount = amount
-                self.products[index].finalPrice = Double(amount) * self.products[index].currentPrice!
-                let indexPath = IndexPath(row: index, section: 0)
-                self.calculeTotal()
-                self.tableView.reloadRows(at: [indexPath], with: .automatic)
-            })
-            action.addAction(ActionButton)
-        }
-        let cancel = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
-        action.addAction(cancel)
-            
-        self.present(action, animated: true, completion: nil)
-    }
-    
-    
-    
-    
-    func buttonSelectAmount(button:UIButton) {
-        self.selectAmount(index: button.tag)
-    }
-    
-    func buttonRemove(button:UIButton) {
-        self.products.remove(at: button.tag)
-        self.tableView.reloadData()
-        self.calculeTotal()
-        self.calculeAmountItem()
-    }
-    
     
 }
 
