@@ -99,7 +99,7 @@ class CatalogViewController: UIViewController {
                 let action = UIAlertAction(title: size.size, style: .default, handler: { (actionAlert) in
                     let success = RealmController().saveRealm(product: self.products[index], sizeSelect: size.size!)
                     if success == false {
-                        self.alert(title: "Desculpe", message: "Produto já adicionado ao carrinho, com o mesmo tamanho")
+                        self.alert(title: "Desculpe", message: "O produto já está adicionado no carrinho com este tamanho.")
                     }
                     self.updateBadge()
                 })

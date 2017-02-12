@@ -63,11 +63,11 @@ class ListBuyViewController: UIViewController {
     // MARK: - Functions Total
     func calculeAmountItem() {
         if products.count == 0 {
-            labelAmountItem.text = "Você não possuí produtos no carrinho"
+            labelAmountItem.text = "Você não possui produtos no carrinho"
         } else if products.count == 1 {
-            labelAmountItem.text = "Você possuí 1 produto no carrinho"
+            labelAmountItem.text = "Você possui 1 produto no carrinho"
         } else {
-            labelAmountItem.text = "Você possuí " + products.count.description + " produtos no carrinho"
+            labelAmountItem.text = "Você possui " + products.count.description + " produtos no carrinho"
         }
         
     }

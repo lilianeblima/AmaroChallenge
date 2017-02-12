@@ -31,20 +31,6 @@ class ProductRealm: Object {
         
         return productRealm
     }
-    
-    func convertToProduct(productRealm:ProductRealm)->Product {
-        let product = Product()
-        product.id             = productRealm.id
-        product.name           = productRealm.name
-        product.image          = productRealm.image
-        product.sizeSelect     = productRealm.sizeSelect
-        product.amount         = productRealm.amount.value
-        product.finalPrice     = productRealm.finalPrice.value
-        product.currentPrice   = productRealm.currentPrice.value
-        
-        return product
-    }
-    
 
     func saveRealm() {
         do {

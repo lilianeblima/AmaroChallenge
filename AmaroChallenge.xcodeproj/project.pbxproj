@@ -702,6 +702,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1EE0218FD863180A7F528A01 /* Pods-AmaroChallenge.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4RLR8FUC4X;
 				INFOPLIST_FILE = AmaroChallenge/Info.plist;
@@ -716,6 +717,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 966F99001D449A7E575E638B /* Pods-AmaroChallenge.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4RLR8FUC4X;
 				INFOPLIST_FILE = AmaroChallenge/Info.plist;

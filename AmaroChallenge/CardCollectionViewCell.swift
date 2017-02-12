@@ -23,17 +23,24 @@ class CardCollectionViewCell: UICollectionViewCell {
     var product: Product?
 
     // MARK: - Functions
+    func borderImage() {
+        image.layer.borderWidth = 0.6
+        image.layer.borderColor = UIColor.blue.cgColor
+        image.layer.cornerRadius = 10
+    }
+    
     func fillCell() {
         if let prod = product {
+            self.borderImage()
             labelName.text = prod.name
             
             if prod.onSale == true {
                 labelNormalPrice.isHidden = false
-                labelNormalPrice.text = prod.regularPrice
+                labelNormalPrice.text = "De: " + prod.regularPrice!
             } else {
                 labelNormalPrice.isHidden = true
             }
-            labelFinalPrice.text = prod.actualPrice
+            labelFinalPrice.text = "Por: " + prod.actualPrice!
             
             if let url =  URL(string: prod.image!) {
                 image.af_setImage(withURL: url)
