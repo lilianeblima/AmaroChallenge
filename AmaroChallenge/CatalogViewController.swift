@@ -74,7 +74,15 @@ class CatalogViewController: UIViewController {
 
     // MARK: - Buttons
     func buttonBuy(button: UIButton) {
-        self.alertSize(title: "Selecione o tamanho", message: "", sizes: products[button.tag].sizes!, index: button.tag)
+        if products[button.tag].sizes?.count == 1 {
+            guard let sizeSelect = products[button.tag].sizes?.first?.size else {
+                return
+            }
+            self.saveRealm(index: button.tag, sizeSelect: sizeSelect)
+        } else {
+            self.alertSize(title: "Selecione o tamanho", message: "", sizes: products[button.tag].sizes!, index: button.tag)
+        }
+        
     }
     func buttonListToBuy(button: UIButton) {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -106,14 +114,21 @@ class CatalogViewController: UIViewController {
         for size in sizes {
             if size.available == true {
                 let action = UIAlertAction(title: size.size, style: .default, handler: { (actionAlert) in
-                    RealmController().saveRealm(product: self.products[index], sizeSelect: size.size!)
-                    self.updateBadge()
+                    guard let sizeSelect = size.size else {
+                        return
+                    }
+                    self.saveRealm(index: index, sizeSelect: sizeSelect)
                 })
                 alertController.addAction(action)
             }
             
         }
         self.present(alertController, animated: true)
+    }
+    
+    func saveRealm(index:Int, sizeSelect:String) {
+        RealmController().saveRealm(product: self.products[index], sizeSelect: sizeSelect)
+        self.updateBadge()
     }
 }
 

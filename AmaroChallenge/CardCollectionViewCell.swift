@@ -24,16 +24,10 @@ class CardCollectionViewCell: UICollectionViewCell {
     var product: Product?
 
     // MARK: - Functions
-    func borderImage() {
-        image.layer.borderWidth = 0.6
-        image.layer.borderColor = UIColor.blue.cgColor
-        image.layer.cornerRadius = 10
-    }
     
     func fillCell() {
+        self.configureView()
         if let prod = product {
-            self.borderImage()
-            
             labelName.text = prod.name
             
             if prod.onSale == true {
@@ -44,7 +38,7 @@ class CardCollectionViewCell: UICollectionViewCell {
                 
                 labelDiscount.isHidden = false
                 labelDiscount.layer.masksToBounds = true
-                labelDiscount.layer.cornerRadius = 35
+                labelDiscount.layer.cornerRadius = 22
                 if let discountPercentage = prod.discountPercentage {
                     labelDiscount.text = "-\(discountPercentage)"
                 }
@@ -57,8 +51,7 @@ class CardCollectionViewCell: UICollectionViewCell {
             if let actualPrice = prod.actualPrice {
                 labelFinalPrice.text = "Por: \(actualPrice)"
             }
-            
-            
+    
             if let url =  URL(string: prod.image!) {
                 image.af_setImage(withURL: url, placeholderImage: UIImage(named: "noPicture"))
             } else {
@@ -69,6 +62,13 @@ class CardCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    func configureView() {
+        self.layer.cornerRadius = 10
+        self.layer.borderWidth = 1
+        self.layer.borderColor = UIColor.black.cgColor
+    }
+    
+    
     func settingsSizes(prod:Product) {
         if sizeStackView.arrangedSubviews.count != 0 {
             for viewStack in sizeStackView.arrangedSubviews {
@@ -76,13 +76,20 @@ class CardCollectionViewCell: UICollectionViewCell {
                 viewStack.removeFromSuperview()
             }
         }
-        for size in prod.sizes! {
-            if size.available == true {
-                let label = UILabel()
-                label.text = size.size
-                sizeStackView.addArrangedSubview(label)
+        
+        if prod.sizes?.count != 1 {
+            for size in prod.sizes! {
+                if size.available == true {
+                    let label = UILabel(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+                    label.text = size.size
+                    label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+                    label.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+                    label.textAlignment = .center
+                    sizeStackView.addArrangedSubview(label)
+                }
             }
         }
+        
     }
     
     
