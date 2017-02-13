@@ -17,14 +17,20 @@ class ProductBuyTableViewCell: UITableViewCell {
     @IBOutlet var labelPrice: UILabel!
     @IBOutlet var labelSize: UILabel!
     @IBOutlet var buttonRemoveList: UIButton!
-    @IBOutlet var buttonAmount: UIButton!
+    @IBOutlet var buttonAdd: UIButton!
+    @IBOutlet var buttonRemove: UIButton!
+    @IBOutlet var labelAmount: UILabel!
+    
     
     // MARK: - Variables
     var product: Product?
     
     // MARK: - Function
+    
     func fillList() {
         if let prod = product {
+            self.configureButtonsAmount(button: buttonAdd)
+            self.configureButtonsAmount(button: buttonRemove)
             labelName.text  = prod.name
             labelPrice.text = prod.finalPrice?.toPrice()
             
@@ -33,7 +39,7 @@ class ProductBuyTableViewCell: UITableViewCell {
             }
             
             if let amount = prod.amount {
-                buttonAmount.setTitle("Quantidade: \(amount)", for: .normal)
+                labelAmount.text = "Quantidade: \(amount)"
             }
             
             if let url =  URL(string: prod.image!) {
@@ -42,6 +48,12 @@ class ProductBuyTableViewCell: UITableViewCell {
                 imageProduct.image = UIImage(named: "noPicture")
             }
         }
+    }
+    
+    func configureButtonsAmount(button:UIButton) {
+        button.layer.borderWidth = 0.4
+        button.layer.borderColor = UIColor.black.cgColor
+        button.roundRadius()
     }
     
     // MARK: - TableView

@@ -30,26 +30,12 @@ class ListBuyViewController: UIViewController {
     }
 
     // MARK: - Buttons
-    func buttonSelectAmount(button:UIButton) {
-        let index = button.tag
-        let action = UIAlertController(title: "Selecione a quantidade", message: "", preferredStyle: .actionSheet)
-        
-        for amount in 1..<11 {
-            let ActionButton = UIAlertAction(title: amount.description, style: .default, handler: { (action) in
-                self.products[index].amount = amount
-                self.products[index].finalPrice = Double(amount) * self.products[index].currentPrice!
-                let indexPath = IndexPath(row: index, section: 0)
-                self.calculeTotal()
-                self.tableView.reloadRows(at: [indexPath], with: .automatic)
-                RealmController().updateData(product: self.products[index])
-                self.calculeAmountItem()
-            })
-            action.addAction(ActionButton)
-        }
-        let cancel = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
-        action.addAction(cancel)
-        
-        self.present(action, animated: true, completion: nil)
+    func buttonAddItem(button:UIButton) {
+        self.amount(isAdd: true, index: button.tag)
+    }
+    
+    func buttonRemoveItem(button:UIButton) {
+        self.amount(isAdd: false, index: button.tag)
     }
     
     func buttonRemove(button:UIButton) {
@@ -61,6 +47,32 @@ class ListBuyViewController: UIViewController {
     }
     
     // MARK: - Functions Total
+    func amount(isAdd:Bool, index:Int) {
+        guard var currentAmount = self.products[index].amount else {
+            return
+        }
+        if isAdd {
+           currentAmount += 1
+        } else {
+            if currentAmount > 1 {
+                currentAmount -= 1
+            }
+        }
+        
+        self.products[index].amount = currentAmount
+        
+        guard let currentPrice = self.products[index].currentPrice else {
+            return
+        }
+        self.products[index].finalPrice = Double(currentAmount) * currentPrice
+        let indexPath = IndexPath(row: index, section: 0)
+        self.calculeTotal()
+        self.tableView.reloadRows(at: [indexPath], with: .automatic)
+        RealmController().updateData(product: self.products[index])
+        self.calculeAmountItem()
+        
+    }
+    
     func calculeAmountItem() {
         var amount = 0
         for product in products {
@@ -100,8 +112,11 @@ extension ListBuyViewController: UITableViewDataSource, UITableViewDelegate {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "cellBuy", for: indexPath) as? ProductBuyTableViewCell {
             cell.product = products[indexPath.row]
             cell.fillList()
-            cell.buttonAmount.tag = indexPath.row
-            cell.buttonAmount.addTarget(self, action: #selector(ListBuyViewController.buttonSelectAmount(button:)), for: .touchDown)
+            cell.buttonAdd.tag = indexPath.row
+            cell.buttonRemove.tag = indexPath.row
+            cell.buttonAdd.addTarget(self, action: #selector(ListBuyViewController.buttonAddItem(button:)), for: .touchDown)
+            cell.buttonRemove.addTarget(self, action: #selector(ListBuyViewController.buttonRemoveItem(button:)), for: .touchDown)
+
             cell.buttonRemoveList.tag = indexPath.row
             cell.buttonRemoveList.addTarget(self, action: #selector(ListBuyViewController.buttonRemove(button:)), for: .touchDown)
             return cell
