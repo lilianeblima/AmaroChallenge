@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fZq-bp-TTw">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="52" width="320" height="516"/>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1ue-N7-Ewn">
                                     <size key="itemSize" width="294" height="459"/>
@@ -33,7 +33,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellCard" id="Zzy-gG-zkh" customClass="CardCollectionViewCell" customModule="AmaroChallenge" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="13" width="294" height="459"/>
+                                        <rect key="frame" x="10" y="-14" width="294" height="459"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="294" height="459"/>
@@ -126,22 +126,29 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Oaa-K6-Jl2"/>
                                 </connections>
                             </collectionView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="sq8-5L-Xmw">
+                                <rect key="frame" x="76.5" y="74" width="167" height="29"/>
+                                <segments>
+                                    <segment title="Todos"/>
+                                    <segment title="Promoções"/>
+                                </segments>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <connections>
+                                    <action selector="changedSegmentedControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="C7a-Fy-Frk"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="fZq-bp-TTw" firstAttribute="top" secondItem="sq8-5L-Xmw" secondAttribute="bottom" constant="-50" id="3kU-id-Loq"/>
                             <constraint firstAttribute="trailing" secondItem="fZq-bp-TTw" secondAttribute="trailing" id="3uR-tk-bgf"/>
+                            <constraint firstItem="sq8-5L-Xmw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="4OM-Iw-HPu"/>
+                            <constraint firstItem="sq8-5L-Xmw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6XU-g5-VFg"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fZq-bp-TTw" secondAttribute="bottom" id="eZu-jR-PHA"/>
-                            <constraint firstItem="fZq-bp-TTw" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="hGc-me-67Y"/>
                             <constraint firstItem="fZq-bp-TTw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="vXw-oH-ims"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Produtos" id="tYC-Aa-c4o">
-                        <barButtonItem key="leftBarButtonItem" image="filter" id="u43-Tt-W3T">
-                            <connections>
-                                <action selector="buttonFilter:" destination="BYZ-38-t0r" id="GEh-Df-v0c"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Produtos" id="tYC-Aa-c4o"/>
                     <connections>
                         <outlet property="collectionView" destination="fZq-bp-TTw" id="WnG-L0-X4x"/>
                     </connections>
@@ -308,7 +315,6 @@
     </scenes>
     <resources>
         <image name="addCar" width="50" height="50"/>
-        <image name="filter" width="25" height="25"/>
         <image name="noPicture" width="300" height="300"/>
     </resources>
 </document>

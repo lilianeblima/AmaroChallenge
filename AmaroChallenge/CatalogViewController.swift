@@ -80,9 +80,12 @@ class CatalogViewController: UIViewController {
         self.navigationController?.pushViewController(listView, animated: true)
     }
     
-    @IBAction func buttonFilter(_ sender: UIBarButtonItem) {
-        if filter == false {
-            filter = true
+    // MARK: - SegmentedControl
+    @IBAction func changedSegmentedControl(_ sender: UISegmentedControl) {
+        print(sender.selectedSegmentIndex)
+        if sender.selectedSegmentIndex == 0 {
+            products = productsFilter
+        } else if sender.selectedSegmentIndex == 1 {
             productsFilter = products
             var prods = [Product]()
             
@@ -92,9 +95,6 @@ class CatalogViewController: UIViewController {
                 }
             }
             products = prods
-        } else {
-            filter = false
-            products = productsFilter
         }
         self.collectionView.reloadData()
     }
@@ -105,7 +105,7 @@ class CatalogViewController: UIViewController {
         for size in sizes {
             if size.available == true {
                 let action = UIAlertAction(title: size.size, style: .default, handler: { (actionAlert) in
-                    let success = RealmController().saveRealm(product: self.products[index], sizeSelect: size.size!)
+                    RealmController().saveRealm(product: self.products[index], sizeSelect: size.size!)
                     self.updateBadge()
                 })
                 alertController.addAction(action)
