@@ -38,8 +38,16 @@ class CatalogViewController: UIViewController {
     }
     
     func updateBadge() {
-        let prodsRealm = RealmController().getAllProducts()
-        self.settingsButtonBarRight(badge: prodsRealm.count)
+        let prodsRealm = RealmController().getProducts()
+        var total = 0
+        for prod in prodsRealm {
+            guard let amount  = prod["amount"] as? Int else {
+                return
+            }
+            total = total + amount
+        }
+        
+        self.settingsButtonBarRight(badge: total)
     }
 
     func settingsButtonBarRight(badge:Int) {
@@ -98,9 +106,6 @@ class CatalogViewController: UIViewController {
             if size.available == true {
                 let action = UIAlertAction(title: size.size, style: .default, handler: { (actionAlert) in
                     let success = RealmController().saveRealm(product: self.products[index], sizeSelect: size.size!)
-                    if success == false {
-                        self.alert(title: "Desculpe", message: "O produto já está adicionado no carrinho com este tamanho.")
-                    }
                     self.updateBadge()
                 })
                 alertController.addAction(action)
@@ -109,14 +114,6 @@ class CatalogViewController: UIViewController {
         }
         self.present(alertController, animated: true)
     }
-    
-    func alert(title:String, message:String) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        alertController.addAction(action)
-        self.present(alertController, animated: true)
-    }
-    
 }
 
 

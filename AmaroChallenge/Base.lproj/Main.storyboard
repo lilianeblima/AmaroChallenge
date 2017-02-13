@@ -39,7 +39,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="294" height="459"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MHU-OO-7BS">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noPicture" translatesAutoresizingMaskIntoConstraints="NO" id="MHU-OO-7BS">
                                                     <rect key="frame" x="15" y="35" width="229" height="330"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="330" id="vT5-0k-hvT"/>
@@ -309,5 +309,6 @@
     <resources>
         <image name="addCar" width="50" height="50"/>
         <image name="filter" width="25" height="25"/>
+        <image name="noPicture" width="300" height="300"/>
     </resources>
 </document>

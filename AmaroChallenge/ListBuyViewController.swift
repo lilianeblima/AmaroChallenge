@@ -43,6 +43,7 @@ class ListBuyViewController: UIViewController {
                 self.calculeTotal()
                 self.tableView.reloadRows(at: [indexPath], with: .automatic)
                 RealmController().updateData(product: self.products[index])
+                self.calculeAmountItem()
             })
             action.addAction(ActionButton)
         }
@@ -62,12 +63,20 @@ class ListBuyViewController: UIViewController {
     
     // MARK: - Functions Total
     func calculeAmountItem() {
-        if products.count == 0 {
+        var amount = 0
+        for product in products {
+            guard let prodAmount = product.amount else {
+                return
+            }
+            amount = amount + prodAmount
+        }
+        
+        if amount == 0 {
             labelAmountItem.text = "Você não possui produtos no carrinho"
-        } else if products.count == 1 {
+        } else if amount == 1 {
             labelAmountItem.text = "Você possui 1 produto no carrinho"
         } else {
-            labelAmountItem.text = "Você possui " + products.count.description + " produtos no carrinho"
+            labelAmountItem.text = "Você possui " + amount.description + " produtos no carrinho"
         }
         
     }

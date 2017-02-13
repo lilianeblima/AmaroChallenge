@@ -31,7 +31,7 @@ class ProductBuyTableViewCell: UITableViewCell {
             buttonAmount.setTitle("Quantidade: " + (prod.amount?.description)!, for: .normal)
             
             if let url =  URL(string: prod.image!) {
-                imageProduct.af_setImage(withURL: url)
+                imageProduct.af_setImage(withURL: url, placeholderImage: UIImage(named: "noPicture"))
             } else {
                 imageProduct.image = UIImage(named: "noPicture")
             }

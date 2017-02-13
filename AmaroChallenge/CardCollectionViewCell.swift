@@ -51,7 +51,7 @@ class CardCollectionViewCell: UICollectionViewCell {
             labelFinalPrice.text = "Por: " + prod.actualPrice!
             
             if let url =  URL(string: prod.image!) {
-                image.af_setImage(withURL: url)
+                image.af_setImage(withURL: url, placeholderImage: UIImage(named: "noPicture"))
             } else {
                 image.image = UIImage(named: "noPicture")
             }

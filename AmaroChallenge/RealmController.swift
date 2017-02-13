@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 
 class RealmController {
-    func saveRealm(product:Product, sizeSelect:String)->Bool {
+    func saveRealm(product:Product, sizeSelect:String) {
         let prod = Product()
         prod.name           = product.name
         prod.id             = product.style
@@ -22,13 +22,10 @@ class RealmController {
         prod.convertPrice()
         product.sizeSelect = sizeSelect
         let exist = self.existProduncListToBuy(product: product)
-        if exist {
-            return false
-        } else {
+        if exist == false {
             let p = ProductRealm().convertToProductRealm(product: prod)
             p.saveRealm()
-            return true
-        }
+        } 
         
         
     }
@@ -92,10 +89,14 @@ class RealmController {
             for prod in products {
                 let id = prod["id"] as? String ?? ""
                 if id == product.id {
-                    try! realm.write {
-                        prod.setValue(product.amount, forKeyPath: "amount")
-                        prod.setValue(product.finalPrice, forKey: "finalPrice")
+                    let size = prod["sizeSelect"] as? String ?? ""
+                    if size == product.sizeSelect {
+                        try! realm.write {
+                            prod.setValue(product.amount, forKeyPath: "amount")
+                            prod.setValue(product.finalPrice, forKey: "finalPrice")
+                        }
                     }
+                    
                 }
             }
             
@@ -105,16 +106,31 @@ class RealmController {
     }
 
     func existProduncListToBuy(product:Product)->Bool {
-        let productsRealms = self.getProducts()
-        for prod in productsRealms {
-            let id = prod["id"] as? String ?? ""
-            if id == product.style {
-                let selectSize = prod["sizeSelect"] as? String ?? ""
-                if selectSize == product.sizeSelect {
-                    return true
+        
+        do {
+            let realm = try Realm()
+            let productsRealms = realm.objects(ProductRealm.self)
+            for prod in productsRealms {
+                let id = prod["id"] as? String ?? ""
+                if id == product.style {
+                    let selectSize = prod["sizeSelect"] as? String ?? ""
+                    if selectSize == product.sizeSelect {
+                        var amount = prod["amount"] as? Int ?? 0
+                        amount = amount + 1
+                        try! realm.write {
+                            prod.setValue(amount, forKeyPath: "amount")
+                        }
+                        return true
+                    }
                 }
             }
+            
+        } catch let error as NSError {
+            fatalError(error.localizedDescription)
         }
+        
+        
         return false
     }
+
 }
