@@ -18,7 +18,7 @@ class ProductRealm: Object {
     var amount =            RealmOptional<Int>()
     var finalPrice =        RealmOptional<Double>()
     var currentPrice =      RealmOptional<Double>()
-    
+
     func convertToProductRealm(product:Product)->ProductRealm {
         let productRealm = ProductRealm()
         productRealm.id             = product.id

@@ -8,13 +8,61 @@
 
 import XCTest
 @testable import AmaroChallenge
+import Foundation
+import UIKit
+
+extension UIViewController {
+    
+    func preload() {
+        _ = self.view
+    }
+    
+}
 
 class AmaroChallengeTests: XCTestCase {
     
+    var catalogViewController: CatalogViewController!
+    var listBuyViewController: ListBuyViewController!
+    
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        catalogViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "catalogView") as! CatalogViewController
+        catalogViewController.preload()
+        
+        listBuyViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "listView") as! ListBuyViewController
+        listBuyViewController.preload()
     }
+    
+    // MARK: - CatalogViewController
+    
+    func testNumberItensCatalogViewController() {
+        var products = [Product]()
+        for i in 0..<10 {
+            let product = Product()
+            product.name = "Product " + i.description
+            products.append(product)
+        }
+        catalogViewController.products = products
+        catalogViewController.collectionView.reloadData()
+        
+        XCTAssertEqual(catalogViewController.collectionView.numberOfItems(inSection: 0), 10, "Número de elementos na collectionView deve ser igual a 10")
+    }
+    
+    // MARK: - ListBuyViewController
+    
+    func testNumberItensListBuyViewController() {
+        var products = [Product]()
+        for i in 0..<10 {
+            let product = Product()
+            product.name = "Product " + i.description
+            products.append(product)
+        }
+        listBuyViewController.products = products
+        listBuyViewController.tableView.reloadData()
+        
+        XCTAssertEqual(listBuyViewController.tableView.numberOfRows(inSection: 0), 10, "Número de linhas na tableView deve ser igual a 10")
+    }
+    
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
