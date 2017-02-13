@@ -52,17 +52,19 @@ class CatalogViewController: UIViewController {
 
     func settingsButtonBarRight(badge:Int) {
         let buttonRight = UIButton(type: .custom)
-        buttonRight.frame = CGRect(x: 0, y: 0, width: 40 , height: 40)
-        buttonRight.setImage(UIImage(named: "car"), for: .normal)
+        buttonRight.frame = CGRect(x: 0, y: 0, width: 35 , height: 35)
+        buttonRight.setImage(#imageLiteral(resourceName: "Cart_Icon"), for: .normal)
         
         if badge != 0 {
             let labelBadge = UILabel()
-            labelBadge.text = " " + badge.description
-            labelBadge.backgroundColor = UIColor.red
-            labelBadge.textColor = UIColor.white
+            labelBadge.text = "\(badge)"
+            labelBadge.backgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+            labelBadge.textColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
+            labelBadge.font = .systemFont(ofSize: 12)
             labelBadge.layer.masksToBounds = true
-            labelBadge.layer.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
-            labelBadge.layer.cornerRadius = 12.5
+            labelBadge.layer.frame = CGRect(x: 20, y: 0, width: 18, height: 18)
+            labelBadge.roundRadius()
+            labelBadge.textAlignment = .center
             buttonRight.addSubview(labelBadge)
         }
         buttonRight.addTarget(self, action: #selector(CatalogViewController.buttonListToBuy(button:)), for: .touchDown)
@@ -82,7 +84,6 @@ class CatalogViewController: UIViewController {
     
     // MARK: - SegmentedControl
     @IBAction func changedSegmentedControl(_ sender: UISegmentedControl) {
-        print(sender.selectedSegmentIndex)
         if sender.selectedSegmentIndex == 0 {
             products = productsFilter
         } else if sender.selectedSegmentIndex == 1 {

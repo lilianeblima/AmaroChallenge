@@ -29,7 +29,6 @@ class ListBuyViewController: UIViewController {
         self.calculeAmountItem()
     }
 
-    
     // MARK: - Buttons
     func buttonSelectAmount(button:UIButton) {
         let index = button.tag
@@ -76,7 +75,7 @@ class ListBuyViewController: UIViewController {
         } else if amount == 1 {
             labelAmountItem.text = "Você possui 1 produto no carrinho"
         } else {
-            labelAmountItem.text = "Você possui " + amount.description + " produtos no carrinho"
+            labelAmountItem.text = "Você possui \(amount) produtos no carrinho"
         }
         
     }
@@ -86,7 +85,7 @@ class ListBuyViewController: UIViewController {
         for product in products {
             total = total + product.finalPrice!
         }
-        labelFinalPrice.text = "R$ " + total.description
+        labelFinalPrice.text = total.toPrice()
     }
     
 }

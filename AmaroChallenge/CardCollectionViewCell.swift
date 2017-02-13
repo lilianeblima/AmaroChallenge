@@ -38,17 +38,26 @@ class CardCollectionViewCell: UICollectionViewCell {
             
             if prod.onSale == true {
                 labelNormalPrice.isHidden = false
-                labelNormalPrice.text = "De: " + prod.regularPrice!
+                if let regularPrice = prod.regularPrice {
+                    labelNormalPrice.text = "De: \(regularPrice)"
+                }
                 
                 labelDiscount.isHidden = false
                 labelDiscount.layer.masksToBounds = true
                 labelDiscount.layer.cornerRadius = 35
-                labelDiscount.text = "-" + prod.discountPercentage!
+                if let discountPercentage = prod.discountPercentage {
+                    labelDiscount.text = "-\(discountPercentage)"
+                }
+                
             } else {
                 labelDiscount.isHidden = true
                 labelNormalPrice.isHidden = true
             }
-            labelFinalPrice.text = "Por: " + prod.actualPrice!
+            
+            if let actualPrice = prod.actualPrice {
+                labelFinalPrice.text = "Por: \(actualPrice)"
+            }
+            
             
             if let url =  URL(string: prod.image!) {
                 image.af_setImage(withURL: url, placeholderImage: UIImage(named: "noPicture"))
